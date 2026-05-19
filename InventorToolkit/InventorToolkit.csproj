@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Autodesk.InventorToolkit.Inventor.addin" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Readme.txt" />
