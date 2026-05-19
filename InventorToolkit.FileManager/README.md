@@ -1,108 +1,126 @@
-﻿InventorToolkit.FileManager
+# 📁 InventorToolkit.FileManager
 
-A beginner-friendly CAD File Import and Export Manager developed as part of the Autodesk Inventor add-in toolkit.
+> A beginner-friendly CAD file import/export add-in for :contentReference[oaicite:0]{index=0} developed using **C#**, **.NET 8**, **WPF**, and Autodesk Inventor API.
 
-This module helps users import Inventor-supported files into the current Inventor session and export the active document to a selected location using a simple WPF interface.
+This module allows users to import Inventor-supported files into the current Inventor session and export active documents using a simple custom WPF interface.
 
+---
 
+## ✨ Features
 
-Project Purpose
-
-The goal of this module is to simplify basic file handling operations inside Autodesk Inventor.
-
-Users can:
-
-Browse supported CAD files
-Open selected files in Autodesk Inventor workspace
-Export active Inventor files
-Select save location
-Rename file before exporting
-View operation status
-
-
-
-Features
-
-Import
+### 📥 Import
 
 Allows importing supported Inventor files.
 
-Supported extensions:
+### Supported Extensions
 
-.ipt → Part file
-.iam → Assembly file
-.idw → Drawing file
-.dwg → AutoCAD drawing
-.ipn → Presentation file
+| Extension | File Type |
+|---|---|
+| `.ipt` | Part file |
+| `.iam` | Assembly file |
+| `.idw` | Drawing file |
+| `.dwg` | AutoCAD drawing |
+| `.ipn` | Presentation file |
 
+---
 
-Import workflow
+### Import Workflow
 
+```text
 Browse file
-Select supported CAD file
-Click open
-File opens inside Inventor workspace
+     ↓
+Select supported file
+     ↓
+Click Open
+     ↓
+File opens in Inventor
+     ↓
 Status displayed
+```
 
+---
 
-Export
+### 📤 Export
 
-Allows exporting active Inventor document.
+Allows exporting the active Inventor document.
 
-Supported extensions:
+### Supported Export Formats
 
-.ipt
-.iam
-.idw
-.dwg
-.pdf
+| Extension | Output |
+|---|---|
+| `.ipt` | Part |
+| `.iam` | Assembly |
+| `.idw` | Drawing |
+| `.dwg` | CAD |
+| `.pdf` | PDF |
 
+---
 
-Export workflow
+### Export Workflow
 
-Click export
-Save file dialog opens
+```text
+Click Export
+      ↓
+Save dialog opens
+      ↓
 Select location
-Change file name if required
+      ↓
+Rename file (optional)
+      ↓
 Save
+      ↓
 Status displayed
+```
 
+---
 
-Technologies Used
+# 🎯 Project Purpose
 
-Language
-C#
+The goal of this module is to simplify file operations inside Autodesk Inventor.
 
-Framework
-.NET 8
-WPF
+Users can:
 
-API
-Autodesk Inventor API
+✔ Browse supported CAD files  
+✔ Open files in current Inventor session  
+✔ Export active documents  
+✔ Select save location  
+✔ Rename file before export  
+✔ View operation status  
 
-IDE
-Microsoft Visual Studio
+---
 
+# 🛠 Technologies Used
 
-UI Components Used
+| Technology | Details |
+|---|---|
+| Language | C# |
+| Framework | .NET 8 |
+| UI | WPF |
+| API | Autodesk Inventor API |
+| IDE | Microsoft Visual Studio |
 
-The interface is developed using WPF.
+---
 
-Controls used:
+# 🖥 UI Components Used
 
-Grid
-StackPanel
-TextBox
-Button
-Label
-SaveFileDialog
-OpenFileDialog
-MessageBox
+Built using WPF.
 
+### Controls
 
+- Grid  
+- StackPanel  
+- TextBox  
+- Button  
+- Label  
+- OpenFileDialog  
+- SaveFileDialog  
+- MessageBox  
 
-Project Structure
+---
 
+# 📂 Project Structure
+
+```text
 InventorToolkit.FileManager
 │
 ├── MainWindow.xaml
@@ -110,212 +128,272 @@ InventorToolkit.FileManager
 ├── App.xaml
 ├── App.xaml.cs
 └── README.md
+```
 
-Main Functionality
+---
 
-Import Section
-Browse Import File
+# 🚀 Main Functionality
+
+---
+
+## Import Section
+
+### Browse Import File
 
 Uses:
 
+```csharp
 Microsoft.Win32.OpenFileDialog
+```
 
-Allows selecting Inventor-compatible files.
+Allows selecting supported Inventor files.
 
-Filter used:
+### Filter
 
+```text
 Inventor Files (*.ipt;*.iam;*.idw;*.dwg;*.ipn)
+```
 
+---
 
-Open In Inventor
+## Open In Inventor
 
 Uses Autodesk Inventor API:
 
+```csharp
 _app.Documents.Open()
+```
 
 Purpose:
 
-Open selected CAD file directly inside current Inventor workspace.
+Open selected CAD file directly inside the current Inventor workspace.
 
+---
 
-
-Export Section
+## Export Section
 
 Uses:
 
+```csharp
 Microsoft.Win32.SaveFileDialog
+```
 
 Purpose:
 
-Save active Inventor document to selected location.
+Save active document to selected location.
 
 Supports:
 
-file renaming
-extension selection
-overwrite support
+- file renaming  
+- extension selection  
+- overwrite handling  
 
+---
 
+# 🔌 Autodesk Inventor API Used
 
-Autodesk Inventor API Used
+---
 
-Main classes:
+## Application Access
 
-Application Access
+- Application  
+- Document  
 
-Application
-Document
+---
 
-Document Management
+## Document Management
 
-Documents.Open()
-ActiveDocument
-SaveAs()
+- Documents.Open()  
+- ActiveDocument  
+- SaveAs()  
 
-Session Handling
+---
 
-active Inventor instance handling
-ribbon button integration
+## Session Handling
 
+- active Inventor instance  
+- ribbon integration  
+- command execution  
 
+---
 
+# ⚙ How It Works
 
-How It Works
-Launch
+---
+
+## Launch
 
 User opens File Manager from Inventor ribbon.
 
+---
 
+## Internal Flow
 
-Internal Flow
+```text
 User clicks File Manager
-       ↓
+        ↓
 WPF window opens
-       ↓
-Connects to current Inventor application
-       ↓
-Import or Export action selected
-       ↓
+        ↓
+Connect to active Inventor
+        ↓
+Import / Export selected
+        ↓
 File dialog opens
-       ↓
-API operation executed
-       ↓
+        ↓
+API operation executes
+        ↓
 Status shown
+```
 
+---
 
+# 🧠 Logic Used
 
-Logic Used
+---
 
-Import Logic
-Step 1
+## Import Logic
+
+### Step 1
 
 Browse file.
 
-Step 2
+### Step 2
 
 Validate extension.
 
-Step 3
+### Step 3
 
-Use:
+Open file:
 
+```csharp
 _app.Documents.Open(path, true)
+```
 
-Step 4
+### Step 4
 
-Open file in current Inventor session.
+Load inside current Inventor session.
 
+---
 
+## Export Logic
 
-Export Logic
-Step 1
+### Step 1
 
 Read active document.
 
-Step 2
+### Step 2
 
 Get file name.
 
-Step 3
+### Step 3
 
 Open save dialog.
 
-Step 4
+### Step 4
 
-Use:
+Save using:
 
+```csharp
 doc.SaveAs()
-Step 5
+```
+
+### Step 5
 
 Export file.
 
+---
 
-Error Handling
+# 🛡 Error Handling
 
 The application handles:
 
-invalid file selection
-unsupported file extension
-missing active document
-export cancellation
-incorrect path
-duplicate file name
-save failures
+- invalid file selection  
+- unsupported extension  
+- missing active document  
+- export cancellation  
+- incorrect path  
+- duplicate file name  
+- save failure  
 
+---
 
+### Error Display
 
-Errors shown using:
-
+```csharp
 MessageBox.Show()
+```
 
+---
 
-Challenges Solved
+# ⚡ Challenges Solved
 
 During implementation:
 
-Connected add-in WPF with Inventor
-Used active Inventor session
-Prevented opening new Inventor instance
-Fixed export overwrite issue
-Added file rename during export
-Added path display
-Resolved assembly reference conflicts
-Fixed namespace ambiguity
-Fixed build locking issues
+- Connected WPF to Inventor add-in  
+- Used active Inventor session  
+- Prevented launching new Inventor instance  
+- Fixed export overwrite issue  
+- Added rename during export  
+- Added path display  
+- Resolved assembly reference conflicts  
+- Fixed namespace ambiguity  
+- Fixed build lock issues  
 
+---
 
+# 📚 Learning Outcomes
 
+This project helped understand:
 
-Learning Outcomes
+- Autodesk Inventor file operations  
+- document management  
+- API integration  
+- WPF dialog integration  
+- import/export workflow  
+- UI event handling  
+- plugin communication  
+- session management  
 
-This module helped understand:
+---
 
-Autodesk Inventor file operations
-document handling
-API integration
-WPF dialog integration
-import/export workflows
-UI event handling
-plugin communication
-session management
+# 🔮 Future Improvements
 
+Possible upgrades:
 
+- batch import  
+- batch export  
+- drag and drop  
+- recent file history  
+- extension auto-detection  
+- direct PDF export  
+- preview panel  
+- metadata reader  
 
-Future Improvements
+---
 
-Possible enhancements:
+# 👨‍💻 Author
 
-batch import
-batch export
-drag and drop
-recent file history
-extension auto-detection
-PDF direct export
-file preview
-metadata reader
+Developed as part of learning:
 
+- Autodesk Inventor add-in development  
+- C# desktop application development  
+- WPF interface design  
+- CAD automation  
+- API integration  
 
+---
 
-Author
+# ⭐ Project Summary
 
-Developed as part of learning Autodesk Inventor add-in development using C# and WPF.
+InventorToolkit.FileManager is a lightweight Inventor utility add-in that simplifies importing and exporting CAD files directly from Autodesk Inventor.
+
+It demonstrates:
+
+✔ Inventor API integration  
+✔ WPF UI development  
+✔ file management  
+✔ session control  
+✔ plugin communication  
+✔ desktop automation  
+
+---
