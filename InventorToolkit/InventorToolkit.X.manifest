@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+
+  <assemblyIdentity name="InventorToolkit" version="1.0.0.0"></assemblyIdentity>
+
+  <clrClass clsid="{b2c2c4cb-f15d-481e-8913-4a31b7cbf53e}" progid="InventorToolkit.StandardAddInServer" threadingModel="Both" name="InventorToolkit.StandardAddInServer" runtimeVersion=""></clrClass>
+
+  <file name="InventorToolkit.dll" hashalg="SHA1"></file>
+
+</assembly>

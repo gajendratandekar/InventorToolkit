@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<OutputType>Library</OutputType>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Autodesk.Inventor.Interop">
+			<HintPath>C:\Program Files\Autodesk\Inventor 2027\Bin\Autodesk.Inventor.Interop.dll</HintPath>
+			<EmbedInteropTypes>false</EmbedInteropTypes>
+		</Reference>
+	</ItemGroup>
+
+</Project>

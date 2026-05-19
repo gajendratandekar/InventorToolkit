@@ -1,0 +1,14 @@
+<Addin Type="Standard">
+  <!--Created for Autodesk Inventor Version 31.0-->
+  <ClassId>{b2c2c4cb-f15d-481e-8913-4a31b7cbf53e}</ClassId>
+  <ClientId>{b2c2c4cb-f15d-481e-8913-4a31b7cbf53e}</ClientId>
+  <DisplayName>InventorToolkit</DisplayName>
+  <Description>InventorToolkit</Description>
+  <Assembly>C:\Users\Gajendra Tandekar\Desktop\plugins\AssignmentTest3\InventorToolkit\InventorToolkit\bin\x64\Debug\net8.0-windows\InventorToolkit.dll</Assembly>
+  <LoadOnStartUp>1</LoadOnStartUp>
+  <UserUnloadable>1</UserUnloadable>
+  <Hidden>0</Hidden>
+  <SupportedSoftwareVersionGreaterThan>30..</SupportedSoftwareVersionGreaterThan>
+  <DataVersion>1</DataVersion>
+  <UserInterfaceVersion>1</UserInterfaceVersion>
+</Addin>
